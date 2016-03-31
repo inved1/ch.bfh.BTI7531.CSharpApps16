@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="ElementBindingUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ElementBindingUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Slider x:Name="mySlider" Value="2" Minimum="0" Maximum="9" Width="200" Grid.ColumnSpan="9"/>
+        <TextBlock Text="{Binding ElementName=mySlider, Path=Value}" Grid.ColumnSpan="5" Grid.Column="5" FontSize="42"/>
+        <Border Margin="10" Grid.Row="1" Grid.Column="{Binding ElementName=mySlider, Path=Value, Mode=TwoWay}" 
+                Background="Blue" BorderBrush="LightCyan" BorderThickness="10"/>
+    </Grid>
+</Page>
