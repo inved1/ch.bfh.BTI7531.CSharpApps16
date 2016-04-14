@@ -1,0 +1,53 @@
+﻿<Page
+    x:Class="App1.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:App1"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Page.Resources>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="Red" />
+        </Style>
+
+        <ControlTemplate x:Key="RoundButton" TargetType="Button">
+            <Grid>
+                <Ellipse Fill="Green" />
+                <ContentPresenter/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="RoundButton3" TargetType="Button">
+            <Grid>
+                <Ellipse Fill="{TemplateBinding Background}" Width="200" />
+                <ContentPresenter/>
+            </Grid>
+        </ControlTemplate>
+        <ControlTemplate x:Key="RoundButton2" TargetType="Button">
+            <StackPanel>
+                <Ellipse Fill="Yellow" />
+                <ContentPresenter/>
+            </StackPanel>
+        </ControlTemplate>
+    </Page.Resources>
+    
+    
+    <Grid Background="WhiteSmoke">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Button x:Name="btn1" Template="{StaticResource RoundButton}" Grid.Column="1" Margin="29,70,0,70" Tapped="btn1_Tapped" >btn1</Button>
+        <Button x:Name="btn2" Template="{StaticResource RoundButton2}" Tapped="btn2_Tapped" > btn2</Button>
+        <Button x:Name="btn3" Template="{StaticResource RoundButton2}" Grid.Column="2" >btn3</Button>
+    </Grid>
+</Page>
