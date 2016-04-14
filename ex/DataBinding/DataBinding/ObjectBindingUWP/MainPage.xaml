@@ -16,7 +16,7 @@
             <RowDefinition/>
             <RowDefinition/>
         </Grid.RowDefinitions>
-        <TextBox x:Name="tbName" Text="{Binding Source={StaticResource person}, Path=Name, Mode=TwoWay}" Grid.Row="0" FontSize="42"/>
+        <TextBox x:Name="tbName" Text="{Binding Source={StaticResource person}, Path=Name, Mode=TwoWay}" m Grid.Row="0" FontSize="42"/>
         <TextBlock FontSize="42" Text="{Binding Source={StaticResource person}, Path=Name, Mode=OneWay}" Grid.Row="1"/>
     </Grid>
 
